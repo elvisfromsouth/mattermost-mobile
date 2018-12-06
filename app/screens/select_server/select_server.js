@@ -74,7 +74,7 @@ export default class SelectServer extends PureComponent {
             connected: false,
             connecting: false,
             error: null,
-            url: props.serverUrl,
+            url: 'https://chat.fasten.com',
         };
 
         this.cancelPing = null;

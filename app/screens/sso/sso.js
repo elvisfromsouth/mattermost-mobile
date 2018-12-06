@@ -21,6 +21,7 @@ import StatusBar from 'app/components/status_bar';
 import PushNotifications from 'app/push_notifications';
 import {changeOpacity, makeStyleSheetFromTheme} from 'app/utils/theme';
 import tracker from 'app/utils/time_tracker';
+import UserAgent from 'react-native-user-agent';
 
 const HEADERS = {
     'X-Mobile-App': 'mattermost',
@@ -225,6 +226,7 @@ class SSO extends PureComponent {
         } else {
             content = (
                 <WebView
+                    userAgent={UserAgent.getUserAgent()}
                     ref={this.webViewRef}
                     source={{uri: this.loginUrl, headers: HEADERS}}
                     javaScriptEnabledAndroid={true}

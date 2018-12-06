@@ -44,6 +44,7 @@ import com.wix.reactnativenotifications.core.notificationdrawer.INotificationsDr
 import com.wix.reactnativenotifications.core.AppLaunchHelper;
 import com.wix.reactnativenotifications.core.AppLifecycleFacade;
 import com.wix.reactnativenotifications.core.JsIOHelper;
+import com.mattermost.rnbeta.UserAgentPackage;
 
 import android.util.Log;
 
@@ -86,7 +87,8 @@ public class MainApplication extends NavigationApplication implements INotificat
             new InitializationPackage(this),
             new RNRecyclerviewListPackage(),
             new RNCWebViewPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new UserAgentPackage()
     );
   }
 
