@@ -111,6 +111,9 @@ public class NotificationPreferencesModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getDeliveredNotifications(final Promise promise) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.M) {
+            return;
+        }
         Context context = mApplication.getApplicationContext();
         final NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         StatusBarNotification[] statusBarNotifications = notificationManager.getActiveNotifications();
